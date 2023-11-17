@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Centos7安装Docker和Docker Compose | 日常</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="介绍在本文中，我们将学习如何在CentOS 7上安装Docker和Docker Compose。Docker是一种容器化平台，允许你轻松打包、发布和运行应用程序。Docker Compose是一个工具，用于定义和运行多容器Docker应用程序。 步骤 1: 安装Docker卸载旧版本（如果之前安装过的话） 1sudo yum remove docker docker-common docker-s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos7安装Docker和Docker Compose">
+<meta property="og:url" content="http://example.com/2023/11/16/Centos7%E5%AE%89%E8%A3%85doker&dockercompose/index.html">
+<meta property="og:site_name" content="日常">
+<meta property="og:description" content="介绍在本文中，我们将学习如何在CentOS 7上安装Docker和Docker Compose。Docker是一种容器化平台，允许你轻松打包、发布和运行应用程序。Docker Compose是一个工具，用于定义和运行多容器Docker应用程序。 步骤 1: 安装Docker卸载旧版本（如果之前安装过的话） 1sudo yum remove docker docker-common docker-s">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-17T02:57:21.968Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CentOS">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Docker Compose">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="日常" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">日常</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Centos7安装doker&amp;dockercompose" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/16/Centos7%E5%AE%89%E8%A3%85doker&dockercompose/" class="article-date">
+  <time class="dt-published" datetime="2023-11-15T16:00:00.000Z" itemprop="datePublished">2023-11-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a>►<a class="article-category-link" href="/categories/linux/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Centos7安装Docker和Docker Compose
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在本文中，我们将学习如何在CentOS 7上安装Docker和Docker Compose。Docker是一种容器化平台，允许你轻松打包、发布和运行应用程序。Docker Compose是一个工具，用于定义和运行多容器Docker应用程序。</p>
+<h2 id="步骤-1-安装Docker"><a href="#步骤-1-安装Docker" class="headerlink" title="步骤 1: 安装Docker"></a>步骤 1: 安装Docker</h2><p>卸载旧版本（如果之前安装过的话）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+
+<p>安装Docker,执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y docker</span><br></pre></td></tr></table></figure>
+<p>安装完成后，启动Docker并设置为开机启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
+<p>验证Docker是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="选择安装指定版本-可选"><a href="#选择安装指定版本-可选" class="headerlink" title="选择安装指定版本 (可选)"></a>选择安装指定版本 (可选)</h3><ul>
+<li>查看可用版本有哪些 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | <span class="built_in">sort</span> -r</span><br></pre></td></tr></table></figure></li>
+<li>选择一个版本并安装：yum install docker-ce-版本号</li>
+</ul>
+<h2 id="步骤-2-配置Docker权限"><a href="#步骤-2-配置Docker权限" class="headerlink" title="步骤 2: 配置Docker权限"></a>步骤 2: 配置Docker权限</h2><p>默认情况下，Docker需要root权限，为了避免每次运行Docker命令都需要sudo，将用户添加到docker组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+<p>注销并重新登录以应用更改。</p>
+<h2 id="步骤-3-安装Docker-Compose"><a href="#步骤-3-安装Docker-Compose" class="headerlink" title="步骤 3: 安装Docker Compose"></a>步骤 3: 安装Docker Compose</h2><p>接下来，安装Docker Compose。执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y docker-compose</span><br></pre></td></tr></table></figure>
+<p>安装完成后，验证Docker Compose：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/16/Centos7%E5%AE%89%E8%A3%85doker&dockercompose/" data-id="clp26kqj30000yww1bxfpdsy9" data-title="Centos7安装Docker和Docker Compose" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker-Compose/" rel="tag">Docker Compose</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/11/17/Docker%E5%92%8CDocker%20Compose%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Docker和Docker Compose常用命令
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">常用命令</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-docker-compose/">docker&docker-compose</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/">docker</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-Compose/" rel="tag">Docker Compose</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Docker-Compose/" style="font-size: 10px;">Docker Compose</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/17/Docker%E5%92%8CDocker%20Compose%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Docker和Docker Compose常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/16/Centos7%E5%AE%89%E8%A3%85doker&dockercompose/">Centos7安装Docker和Docker Compose</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

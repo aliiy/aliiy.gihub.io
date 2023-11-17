@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Docker和Docker Compose常用命令 | 日常</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="在当今软件开发的潮流中，容器化技术成为了不可或缺的一环。Docker和Docker Compose作为领先的容器化工具，为开发者提供了强大的工具集。本文将详细介绍Docker和Docker Compose的常用命令，帮助你更好地利用这两个工具进行容器化应用的构建和管理。 Docker常用命令1. 镜像操作查看本地镜像列表运行此命令可以列出本地所有已下载的镜像，以及它们的基本信息，如镜像ID、创建时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker和Docker Compose常用命令">
+<meta property="og:url" content="http://example.com/2023/11/17/Docker%E5%92%8CDocker%20Compose%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="日常">
+<meta property="og:description" content="在当今软件开发的潮流中，容器化技术成为了不可或缺的一环。Docker和Docker Compose作为领先的容器化工具，为开发者提供了强大的工具集。本文将详细介绍Docker和Docker Compose的常用命令，帮助你更好地利用这两个工具进行容器化应用的构建和管理。 Docker常用命令1. 镜像操作查看本地镜像列表运行此命令可以列出本地所有已下载的镜像，以及它们的基本信息，如镜像ID、创建时">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-17T03:17:25.048Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="日常" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">日常</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Docker和Docker Compose常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/17/Docker%E5%92%8CDocker%20Compose%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2023-11-16T16:00:00.000Z" itemprop="datePublished">2023-11-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">常用命令</a>►<a class="article-category-link" href="/categories/linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-docker-compose/">docker&docker-compose</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Docker和Docker Compose常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在当今软件开发的潮流中，容器化技术成为了不可或缺的一环。Docker和Docker Compose作为领先的容器化工具，为开发者提供了强大的工具集。本文将详细介绍Docker和Docker Compose的常用命令，帮助你更好地利用这两个工具进行容器化应用的构建和管理。</p>
+<h2 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h2><h3 id="1-镜像操作"><a href="#1-镜像操作" class="headerlink" title="1. 镜像操作"></a>1. 镜像操作</h3><h4 id="查看本地镜像列表"><a href="#查看本地镜像列表" class="headerlink" title="查看本地镜像列表"></a>查看本地镜像列表</h4><p>运行此命令可以列出本地所有已下载的镜像，以及它们的基本信息，如镜像ID、创建时间等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<p>从Docker Hub拉取镜像,通过此命令，你可以从Docker Hub仓库中拉取指定镜像及其标签，以获取最新的或特定版本的镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull &lt;镜像名称&gt;:&lt;标签&gt;</span><br></pre></td></tr></table></figure>
+<p>构建镜像,使用Dockerfile定义镜像构建过程后，通过此命令可以在本地构建一个新的镜像，并指定名称和标签。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t &lt;镜像名称&gt;:&lt;标签&gt; &lt;Dockerfile路径&gt;</span><br></pre></td></tr></table></figure>
+<p>删除本地镜像,删除指定的本地镜像，可以通过镜像ID或者镜像名称:标签的形式进行删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi &lt;镜像ID&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-容器操作"><a href="#2-容器操作" class="headerlink" title="2. 容器操作"></a>2. 容器操作</h3><p>运行容器,通过此命令可以在本地运行一个容器，可以指定容器名称、端口映射、环境变量等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name &lt;容器名称&gt; -p &lt;主机端口&gt;:&lt;容器端口&gt; -e &lt;环境变量&gt; &lt;镜像名称&gt;:&lt;标签&gt;</span><br></pre></td></tr></table></figure>
+<p>查看运行中的容器,通过此命令可以查看本地正在运行的容器，以及它们的基本信息，如容器ID、运行时间等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+<p>进入容器,通过此命令可以进入正在运行的容器，以便在容器内部执行命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it &lt;容器ID&gt; /bin/bash</span><br></pre></td></tr></table></figure>
+<p>停止容器,通过此命令可以停止正在运行的容器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop &lt;容器ID&gt;</span><br></pre></td></tr></table></figure>
+<p>删除容器,通过此命令可以删除指定的容器，可以通过容器ID或者容器名称进行删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> &lt;容器ID&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-仓库操作"><a href="#3-仓库操作" class="headerlink" title="3. 仓库操作"></a>3. 仓库操作</h3><p>登录仓库,通过此命令可以登录到指定的仓库，以便进行镜像的上传和下载。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login &lt;仓库地址&gt;</span><br></pre></td></tr></table></figure>
+<p>查看仓库镜像,通过此命令可以查看指定仓库中的镜像列表，以及它们的基本信息，如镜像名称、标签、大小等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search &lt;仓库地址&gt;</span><br></pre></td></tr></table></figure>
+<p>上传镜像,通过此命令可以将本地的镜像上传到指定的仓库中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push &lt;仓库地址&gt;/&lt;镜像名称&gt;:&lt;标签&gt;</span><br></pre></td></tr></table></figure>
+<p>下载镜像,通过此命令可以从指定的仓库中下载镜像到本地。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull &lt;仓库地址&gt;/&lt;镜像名称&gt;:&lt;标签&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="4-网络操作"><a href="#4-网络操作" class="headerlink" title="4. 网络操作"></a>4. 网络操作</h3><p>查看网络列表,通过此命令可以查看本地的网络列表，以及它们的基本信息，如网络ID、驱动程序等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p>创建网络,通过此命令可以创建一个新的网络，可以指定网络名称、驱动程序、子网等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d &lt;驱动程序&gt; --subnet &lt;子网&gt; &lt;网络名称&gt;</span><br></pre></td></tr></table></figure>
+<p>删除网络,通过此命令可以删除指定的网络，可以通过网络ID或者网络名称进行删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network <span class="built_in">rm</span> &lt;网络ID&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="5-数据卷操作"><a href="#5-数据卷操作" class="headerlink" title="5. 数据卷操作"></a>5. 数据卷操作</h3><p>查看数据卷列表,通过此命令可以查看本地的数据卷列表，以及它们的基本信息，如数据卷名称、挂载点等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p>创建数据卷,通过此命令可以创建一个新的数据卷，可以指定数据卷名称。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume create &lt;数据卷名称&gt;</span><br></pre></td></tr></table></figure>
+<p>删除数据卷,通过此命令可以删除指定的数据卷，可以通过数据卷名称进行删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume <span class="built_in">rm</span> &lt;数据卷名称&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="6-日志操作"><a href="#6-日志操作" class="headerlink" title="6. 日志操作"></a>6. 日志操作</h3><p>查看容器日志,通过此命令可以查看指定容器的日志。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs &lt;容器ID&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="7-其他操作"><a href="#7-其他操作" class="headerlink" title="7. 其他操作"></a>7. 其他操作</h3><p>查看Docker版本,通过此命令可以查看本地Docker的版本信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+<p>查看Docker帮助,通过此命令可以查看Docker的帮助信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h2 id="Docker-Compose常用命令"><a href="#Docker-Compose常用命令" class="headerlink" title="Docker Compose常用命令"></a>Docker Compose常用命令</h2><h3 id="1-容器操作"><a href="#1-容器操作" class="headerlink" title="1. 容器操作"></a>1. 容器操作</h3><p>启动容器,通过此命令可以在本地启动一个容器，可以指定容器名称、端口映射、环境变量等。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+<p>停止容器,通过此命令可以停止正在运行的容器。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose stop</span><br></pre></td></tr></table></figure>
+<p>删除容器,通过此命令可以删除指定的容器，可以通过容器ID或者容器名称进行删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose <span class="built_in">rm</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-其他操作"><a href="#2-其他操作" class="headerlink" title="2. 其他操作"></a>2. 其他操作</h3><p>查看Docker Compose版本,通过此命令可以查看本地Docker Compose的版本信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose version</span><br></pre></td></tr></table></figure>
+<p>查看Docker Compose帮助,通过此命令可以查看Docker Compose的帮助信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文详细介绍了Docker和Docker Compose的常用命令，希望能够帮助你更好地利用这两个工具进行容器化应用的构建和管理。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/17/Docker%E5%92%8CDocker%20Compose%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="clp26kqjb0001yww15qjjffbu" data-title="Docker和Docker Compose常用命令" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/11/16/Centos7%E5%AE%89%E8%A3%85doker&dockercompose/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Centos7安装Docker和Docker Compose</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">常用命令</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/docker-docker-compose/">docker&docker-compose</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/docker/">docker</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker-Compose/" rel="tag">Docker Compose</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Docker-Compose/" style="font-size: 10px;">Docker Compose</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/17/Docker%E5%92%8CDocker%20Compose%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Docker和Docker Compose常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/16/Centos7%E5%AE%89%E8%A3%85doker&dockercompose/">Centos7安装Docker和Docker Compose</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
